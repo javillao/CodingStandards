@@ -6,7 +6,6 @@
 	<module name="Header">
 		<property name="header" value="// Copyright (C) 2020\n// All rights reserved"/>
 	</module>
-
 	<module name="TreeWalker">
 		<module name="LocalVariableName">
 			<property name="format" value="^[a-z](_?[a-zA-Z0-9]+)*$" />
