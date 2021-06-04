@@ -1,5 +1,5 @@
-//
-//
+// Copyright (C) 2020
+// All rights reserved
 
 package labcodingstandards;
 
@@ -7,18 +7,25 @@ import java.util.Scanner;
 
 
 /**
- * @author
+ * @author Jordy Villao
  *
  */
 public class Calculator {	
 //CHECKSTYLE:OFF
+	/**
+	 * This is the entry point of our application.
+	 * This main method is used to ask user inputs 
+	 * and call the Operator method with those inputs.
+	 * @param args Arguments passed to application when
+	 *  it is called from command line
+	 */
 	public static void main(String[] args) {
 		Scanner reader = new Scanner(System.in);
 		
         System.out.print("1. +\n2. -\n3. *\n4. /\nEnter an operator: ");
         
         char operator = reader.nextLine().charAt(0);
-        double First;
+        double first;
         double second;
         String input;
         
@@ -27,7 +34,7 @@ public class Calculator {
         	input = reader.nextLine();
         	
             try {
-            	First=Integer.parseInt(input);
+            	first=Integer.parseInt(input);
                 break;
             } catch (NumberFormatException e) {
                 System.out.println("Not valid!");
@@ -47,15 +54,22 @@ public class Calculator {
         }
 
         Calculator cal=new Calculator();
-        String result=cal.Operation(First,second,operator);
+        String result=cal.operation(first, second, operator);
 
         System.out.printf(result);
 		reader.close();
 	}
 //CHECKSTYLE:ON
 
-
-	private String Operation(double first,double second,char operator) {
+	/**
+	 * This method is used to calculate an operation given
+	 * the operands and operator.
+	 * @param first This is first operand
+	 * @param second This is second operand
+	 * @param operator This is identifier (from 1 to 4) to an operator  
+	 * @return This is the result of the operation
+	 */
+	private String operation(double first, double second, char operator) {
 		double result = 0;
 		switch(operator)
         {
